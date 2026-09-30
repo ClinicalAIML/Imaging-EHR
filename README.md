@@ -2,7 +2,7 @@
 
 Reproducible simulation code for Section 4.7 of
 
-> Wang X. *Fusion of medical imaging and electronic health records for disease classification using deep learning and statistical methods: principles, pitfalls, and future directions.* Submitted to *Statistical Methods in Medical Research*, Special Issue "Classification from Statisticians' Perspectives: Past, Present and Future".
+> Wang X.F. *Fusion of medical imaging and electronic health records for disease classification using deep learning and statistical methods: principles, pitfalls, and future directions.* Submitted to *Statistical Methods in Medical Research*, Special Issue "Classification from Statisticians' Perspectives: Past, Present and Future".
 
 The simulation uses synthetic data only. It shows two things:
 
@@ -16,8 +16,6 @@ A single script regenerates Table 3 and Figure 4 of the manuscript exactly.
 | File | Description |
 |---|---|
 | `simulation_section4_7.py` | Simulation script (Experiments A, A′, B and C) |
-| `table_simulation.tex` | LaTeX body of Table 3 |
-| `figure_simulation_pgfplots.tex` | pgfplots/TikZ code for Figure 4 |
 | `figure_simulation.pdf`, `figure_simulation.png` | Figure 4 rendered with matplotlib |
 | `simulation_results_summary.csv` | Summary for every setting and estimator, with Monte Carlo standard errors and closed-form population AUCs |
 | `simulation_results_long.csv` | Replicate-level results |
@@ -101,21 +99,4 @@ Monte Carlo standard errors are at most 0.002 for AUCs and 0.016 for calibration
 
 ## Reproducibility
 
-Each experiment uses its own fixed seed. With the software versions listed above, a from-scratch run reproduces `table_simulation.tex`, `figure_simulation_pgfplots.tex` and both CSV files byte for byte.
-
-## Citation
-
-If you use this code, please cite the manuscript:
-
-```bibtex
-@unpublished{wang2026fusion,
-  author = {Wang, Xiaofeng},
-  title  = {Fusion of medical imaging and electronic health records for disease classification using deep learning and statistical methods: principles, pitfalls, and future directions},
-  note   = {Submitted to Statistical Methods in Medical Research},
-  year   = {2026}
-}
-```
-
-## Contact
-
-Xiaofeng Wang, PhD, Department of Quantitative Health Sciences, Cleveland Clinic ([wangx6@ccf.org](mailto:wangx6@ccf.org)). Questions and bug reports are welcome through GitHub Issues.
+Each experiment uses its own fixed seed. With the software versions listed above, a from-scratch run reproduces the table and figure in the paper.
