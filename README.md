@@ -2,7 +2,7 @@
 
 Reproducible simulation code for Section 4.7 of
 
-> Wang X. *Fusion of medical imaging and electronic health records for disease classification using deep learning and statistical methods: principles, pitfalls, and future directions.* Submitted to *Statistical Methods in Medical Research*, Special Issue "Classification from Statisticians' Perspectives: Past, Present and Future".
+> Wang X.F. *Fusion of medical imaging and electronic health records for disease classification using deep learning and statistical methods: principles, pitfalls, and future directions.* Submitted to *Statistical Methods in Medical Research*, Special Issue "Classification from Statisticians' Perspectives: Past, Present and Future".
 
 The simulation uses synthetic data only. It shows two things:
 
@@ -101,7 +101,7 @@ Monte Carlo standard errors are at most 0.002 for AUCs and 0.016 for calibration
 
 ## Reproducibility
 
-Each experiment uses its own fixed seed. With the software versions listed above, a from-scratch run reproduces `table_simulation.tex`, `figure_simulation_pgfplots.tex` and both CSV files byte for byte.
+Each experiment uses its own fixed seed. With the software versions listed above, a from-scratch run reproduces the table and figure in the paper.
 
 ## Citation
 
@@ -109,13 +109,10 @@ If you use this code, please cite the manuscript:
 
 ```bibtex
 @unpublished{wang2026fusion,
-  author = {Wang, Xiaofeng},
+  author = {Wang, Xiaofeng F.},
   title  = {Fusion of medical imaging and electronic health records for disease classification using deep learning and statistical methods: principles, pitfalls, and future directions},
   note   = {Submitted to Statistical Methods in Medical Research},
   year   = {2026}
 }
 ```
 
-## Contact
-
-Xiaofeng Wang, PhD, Department of Quantitative Health Sciences, Cleveland Clinic ([wangx6@ccf.org](mailto:wangx6@ccf.org)). Questions and bug reports are welcome through GitHub Issues.
