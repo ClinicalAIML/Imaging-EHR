@@ -216,7 +216,7 @@ def agg(vals, stat):
 def summarise(rows):
     order = METHODS_A + METHODS_A2
     out = []
-    for exp, stat in [("A", "mean"), ("A2", "mean"), ("B", "mean"), ("C", "median")]:
+    for exp, stat in [("A", "mean"), ("A2", "mean"), ("B", "mean"), ("C", "mean")]:
         sub = [r for r in rows if r["experiment"] == exp]
         keys = sorted({(r["setting"], r["method"]) for r in sub}, key=lambda k: (str(k[0]), order.index(k[1]) if k[1] in order else 0))
         for setting, method in keys:
@@ -269,7 +269,7 @@ def write_table(summary, path):
     L.append("AUC against true $Y$ & " + " & ".join(span(f"{r['auc']:.3f}") for r in b) + "\\\\")
     L.append("Calibration slope / intercept & " + " & ".join(span(f"{r['slope']:.3f} / {fmt(r['intercept'], 3, True)}") for r in b) + "\\\\")
     L.append("Corrected slope / intercept & " + " & ".join(span(f"{r['slope_corr']:.3f} / {fmt(r['intercept_corr'], 3, True)}") for r in b) + "\\\\")
-    L += ["\\midrule", "\\multicolumn{9}{@{}l}{\\textbf{C. Selection into imaging} ($n=1000$, $r=0.474$; medians, 200 replicates)}\\\\"]
+    L += ["\\midrule", "\\multicolumn{9}{@{}l}{\\textbf{C. Selection into imaging} ($n=1000$, $r=0.474$; means, 200 replicates)}\\\\"]
     c = [get("C", g, "Early (ridge logistic)") for g in GAMMA_GRID]
     L.append("$\\gamma$ & " + " & ".join(span(f"${g}$") for g in GAMMA_GRID) + "\\\\")
     L.append("Prevalence in imaged cohort & " + " & ".join(span(f"{r['prevalence_selected']:.3f}") for r in c) + "\\\\")

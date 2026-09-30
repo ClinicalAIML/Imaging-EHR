@@ -2,7 +2,7 @@
 
 Reproducible simulation code for Section 4.7 of
 
-> Wang X.F. *Fusion of medical imaging and electronic health records for disease classification using deep learning and statistical methods: principles, pitfalls, and future directions.* Submitted to *Statistical Methods in Medical Research*, Special Issue "Classification from Statisticians' Perspectives: Past, Present and Future".
+> Wang X. *Fusion of medical imaging and electronic health records for disease classification using deep learning and statistical methods: principles, pitfalls, and future directions.* Submitted to *Statistical Methods in Medical Research*, Special Issue "Classification from Statisticians' Perspectives: Past, Present and Future".
 
 The simulation uses synthetic data only. It shows two things:
 
@@ -66,7 +66,7 @@ Every model is evaluated on an independent test set of 4,000 patients.
 | A | How does cross-modal dependence affect fusion strategies? | ρ ∈ {0, 0.15, …, 0.90}, so r ranges from 0 to 0.730; inverse ridge penalty C = 1 | 600 | 200 | 2026 |
 | A′ | Sensitivity analysis with tuned penalties | ρ ∈ {0, 0.30, 0.60, 0.90}; C ∈ {0.03, 0.1, 0.3, 1, 3} chosen by 3-fold cross-validation of log loss | 600 | 100 | 2029 |
 | B | Label misclassification | (Se, Sp) ∈ {(1, 1), (0.9, 0.95), (0.8, 0.9), (0.7, 0.85)}; r = 0.474; C ∈ {0.1, 0.3, 1, 3, 10} chosen by 3-fold cross-validation of log loss | 3,000 | 100 | 2027 |
-| C | Selection into imaging | Pr(S = 1 \| y, z) = expit(−1 + γy + z), γ ∈ {0, 1, 2, 3}; r = 0.474; C = 0.3 | 1,000 imaged patients from a pool of 8,000 | 200 (medians reported) | 2028 |
+| C | Selection into imaging | Pr(S = 1 \| y, z) = expit(−1 + γy + z), γ ∈ {0, 1, 2, 3}; r = 0.474; C = 0.3 | 1,000 imaged patients from a pool of 8,000 | 200 | 2028 |
 
 **Experiment A** compares seven estimators:
 
@@ -93,7 +93,7 @@ You can check a rerun against these values from Table 3:
 - At r = 0, the late-fusion and joint Bayes rules have the same population AUC, 0.847. At r = 0.730, their AUCs are 0.781 and 0.813.
 - Naive probability averaging gives calibration slopes between 1.505 and 1.782.
 - With (Se, Sp) = (0.7, 0.85), the AUC against the true label falls only from 0.815 to 0.792, but the calibration slope rises from 0.960 to 1.872.
-- With the strongest selection (γ = 3), the calibration intercept in the target population is −0.972. The prior-odds correction reduces it to −0.106.
+- With the strongest selection (γ = 3), the calibration intercept in the target population is −0.968. The prior-odds correction reduces it to −0.103.
 
 Monte Carlo standard errors are at most 0.002 for AUCs and 0.016 for calibration slopes and intercepts.
 
@@ -101,7 +101,7 @@ Monte Carlo standard errors are at most 0.002 for AUCs and 0.016 for calibration
 
 ## Reproducibility
 
-Each experiment uses its own fixed seed. With the software versions listed above, a from-scratch run reproduces the table and figure in the paper.
+Each experiment uses its own fixed seed. With the software versions listed above, a from-scratch run reproduces `table_simulation.tex`, `figure_simulation_pgfplots.tex` and both CSV files byte for byte.
 
 ## Citation
 
@@ -109,10 +109,13 @@ If you use this code, please cite the manuscript:
 
 ```bibtex
 @unpublished{wang2026fusion,
-  author = {Wang, Xiaofeng F.},
+  author = {Wang, Xiaofeng},
   title  = {Fusion of medical imaging and electronic health records for disease classification using deep learning and statistical methods: principles, pitfalls, and future directions},
   note   = {Submitted to Statistical Methods in Medical Research},
   year   = {2026}
 }
 ```
 
+## Contact
+
+Xiaofeng Wang, PhD, Department of Quantitative Health Sciences, Cleveland Clinic ([wangx6@ccf.org](mailto:wangx6@ccf.org)). Questions and bug reports are welcome through GitHub Issues.
